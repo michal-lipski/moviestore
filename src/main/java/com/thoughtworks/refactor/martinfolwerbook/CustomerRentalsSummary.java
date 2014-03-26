@@ -12,15 +12,15 @@ public class CustomerRentalsSummary {
         return summary.asString();
     }
 
-    private String rentalHeader(String customerName) {
+    String rentalHeader(String customerName) {
         return "Rental Record for " + customerName + "\n";
     }
 
-    private String rentalsDescriptions(Rentals rentals) {
+    String rentalsDescriptions(Rentals rentals) {
         return rentals.getDescription();
     }
 
-    private String rentalFooterLine(Rentals rentals) {
+    String rentalFooterLine(Rentals rentals) {
         return "Amount owed is " + rentals.getTotalCharge() + "\n";
     }
 

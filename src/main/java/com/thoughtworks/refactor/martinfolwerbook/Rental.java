@@ -1,8 +1,8 @@
 package com.thoughtworks.refactor.martinfolwerbook;
 
 class Rental {
-    private Movie movie;
-    private int daysRented;
+    Movie movie;
+    int daysRented;
 
     public Rental(Movie movie, int daysRented) {
         this.movie = movie;

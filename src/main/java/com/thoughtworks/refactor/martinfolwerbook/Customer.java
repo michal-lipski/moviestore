@@ -17,14 +17,6 @@ class Customer {
         rentals.add(rental);
     }
 
-    public double getTotalRentalsCharge(){
-        return rentals.getTotalCharge();
-    }
-
-    public int getFrequentRenterPoints(){
-        return rentals.getFrequentRenterPoints();
-    }
-
     public String rentalsSummary() {
         return new CustomerRentalsSummary().rentalsSummary(rentals, name);
     }

@@ -1,68 +1,32 @@
 package com.thoughtworks.refactor.martinfolwerbook;
 
-import java.util.ArrayList;
-import java.util.List;
+//Single Responsibility SRP
+//naming
+//DRY
 
 class Customer {
+
+    private Rentals rentals = new Rentals();
     private String name;
-    private List<Rental> rentals = new ArrayList<Rental>();
 
     public Customer(String name) {
         this.name = name;
     }
 
-    public void addRental(Rental arg) {
-        rentals.add(arg);
+    public void addRental(Rental rental) {
+        rentals.add(rental);
     }
 
-    public String getName() {
-        return name;
+    public double getTotalRentalsCharge(){
+        return rentals.getTotalCharge();
     }
 
-    public String statement() {
-        String result = "Rental Record for " + getName() + "\n";
-
-        for (Rental rental : rentals) {
-            //show figures
-            result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rental.getMovie().getCharge(rental.getDaysRented())) + "\n";
-        }
-
-        //add footer lines
-        result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-        result += "You earned " + String.valueOf(getTotalFrequentRenterPoints()) +
-                " frequent renter points";
-        return result;
+    public int getFrequentRenterPoints(){
+        return rentals.getFrequentRenterPoints();
     }
 
-    public String htmlStatement() {
-        String result = "<H1>Rentals for <EM>" + getName() + "</EM></H1 ><P >\n ";
-        for (Rental each : rentals) {
-            result += each.getMovie().getTitle() + ": " +
-                    String.valueOf(each.getMovie().getCharge(each.getDaysRented())) + "<BR>\n";
-        }
-
-        //add footer lines
-        result += "<P>You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>\n";
-        result += "On this rental you earned <EM>" +
-                String.valueOf(getTotalFrequentRenterPoints()) +
-                "</EM> frequent renter points<P>";
-        return result;
-    }
-
-    private int getTotalFrequentRenterPoints() {
-        int result = 0;
-        for (Rental rental : rentals) {
-            result += rental.getMovie().getFrequentRenterPoints(rental.getDaysRented());
-        }
-        return result;
-    }
-
-    private double getTotalCharge() {
-        double result = 0;
-        for (Rental rental : rentals) {
-            result += rental.getMovie().getCharge(rental.getDaysRented());
-        }
-        return result;
+    public String rentalsSummary() {
+        return new CustomerRentalsSummary().rentalsSummary(rentals, name);
     }
 
 }

@@ -26,7 +26,7 @@ public class Movie {
                 price = new NewReleasePrice();
                 break;
             case CHILDREN:
-                price = new ChildrenPrice();
+                price = new ChildrenMoviePrice();
                 break;
             default:
                 throw new IllegalArgumentException("Incorrect Price Code");

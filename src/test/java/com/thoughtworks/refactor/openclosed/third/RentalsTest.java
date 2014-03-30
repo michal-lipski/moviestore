@@ -7,7 +7,7 @@ import org.junit.Test;
 public class RentalsTest {
 
     @Test
-    public void testName() throws Exception {
+    public void calculate_total_charge_for_rentals() throws Exception {
         Rentals rentals = new Rentals();
         Movie regularMovie = new Movie("Matrix", new RegularPrice());
         Movie newReleaseMovie = new Movie("Shrek", new NewReleasePrice());

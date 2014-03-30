@@ -13,26 +13,6 @@ public class Movie {
         this.price = price;
     }
 
-    public int getPriceCode() {
-        return price.getPriceCode();
-    }
-
-    public void setPriceCode(int priceCode) {
-        switch (priceCode) {
-            case REGULAR:
-                price = new RegularPrice();
-                break;
-            case NEW_RELEASE:
-                price = new NewReleasePrice();
-                break;
-            case CHILDREN:
-                price = new ChildrenMoviePrice();
-                break;
-            default:
-                throw new IllegalArgumentException("Incorrect Price Code");
-        }
-    }
-
     public String getTitle() {
         return title;
     }

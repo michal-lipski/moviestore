@@ -1,9 +1,5 @@
 package com.thoughtworks.refactor.demeter;
 
-//Single Responsibility SRP
-//naming
-//DRY
-
 class Customer {
 
     private Rentals rentals = new Rentals();
@@ -17,8 +13,14 @@ class Customer {
         rentals.add(rental);
     }
 
-    public String rentalsSummary() {
-        return new CustomerRentalsSummary().rentalsSummary(rentals, name);
+    public double getTotalCharge() {
+        double totalCharge = 0;
+
+        for (Rental rental : rentals.rentalList) {
+            totalCharge += rental.movie.price.getCharge(rental.daysRented);
+        }
+
+        return totalCharge;
     }
 
 }

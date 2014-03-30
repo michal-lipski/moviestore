@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Rentals implements Iterable<Rental> {
-    private List<Rental> rentalList = new ArrayList<Rental>();
+    List<Rental> rentalList = new ArrayList<Rental>();
 
     public Rentals() {
     }

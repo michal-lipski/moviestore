@@ -1,4 +1,4 @@
-package com.thoughtworks.refactor.martinfolwerbook;
+package com.thoughtworks.refactor.movies;
 
 public class NewReleasePrice extends Price {
     @Override

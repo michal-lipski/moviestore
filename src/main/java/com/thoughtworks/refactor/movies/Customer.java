@@ -1,4 +1,4 @@
-package com.thoughtworks.refactor.martinfolwerbook;
+package com.thoughtworks.refactor.movies;
 
 //Single Responsibility SRP
 //naming

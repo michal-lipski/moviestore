@@ -1,4 +1,4 @@
-package com.thoughtworks.refactor.martinfolwerbook;
+package com.thoughtworks.refactor.movies;
 
 public class Movie {
     public static final int REGULAR = 0;
@@ -8,9 +8,9 @@ public class Movie {
     String title;
     Price price;
 
-    public Movie(String title, int priceCode) {
+    public Movie(String title, Price price) {
         this.title = title;
-        this.setPriceCode(priceCode);
+        this.price = price;
     }
 
     public int getPriceCode() {

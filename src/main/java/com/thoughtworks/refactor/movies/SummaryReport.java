@@ -1,4 +1,4 @@
-package com.thoughtworks.refactor.martinfolwerbook;
+package com.thoughtworks.refactor.movies;
 
 /**
 * Created by mlip on 3/27/14.

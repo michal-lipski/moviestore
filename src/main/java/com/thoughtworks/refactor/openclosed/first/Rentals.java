@@ -1,4 +1,4 @@
-package com.thoughtworks.refactor.martinfolwerbook;
+package com.thoughtworks.refactor.openclosed.first;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,19 +27,5 @@ public class Rentals implements Iterable<Rental> {
         return rentalList.iterator();
     }
 
-    public String getDescription() {
-        String description = "";
-        for (Rental rental : rentalList) {
-            description += rental.rentalDescription() + "\n";
-        }
-        return description;
-    }
 
-    public int getFrequentRenterPoints() {
-        int totalPoints = 0;
-        for (Rental rental : rentalList) {
-            totalPoints = rental.getFrequentRenterPoints();
-        }
-        return totalPoints;
-    }
 }
